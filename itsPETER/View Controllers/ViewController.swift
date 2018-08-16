@@ -10,14 +10,17 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cashLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    // MARK: Variables
     var drugs: [Drug] = []
     var timer: Timer?
     var timeLeft = 300
     
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         cashLabel.text = "$\(DrugController.shared.player.cash)"
     }
     
@@ -41,7 +45,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
     
-    
+    // MARK: TableView Delegate Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return drugs.count
     }
@@ -53,10 +57,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.textLabel?.text = drug.name
         cell.detailTextLabel?.text = String(drug.price)
+        cell.imageView?.image = UIImage(named: drug.name)
         
         return cell
     }
     
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "buyDrugs" {
             guard let indexPath = tableView.indexPathForSelectedRow,
@@ -67,8 +73,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    // MARK: Alerts
     func endGameAlert() {
-        let alertController = UIAlertController(title: "You dead", message: "No dice, you dead.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "You dead", message: "No dice, stick to accounting.", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Go to my funeral", style: .default) { (_) in
             fatalError()
@@ -91,6 +98,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    // MARK: Timer helpers
     @objc func fireTimer() {
         timeLeft -= 1
         self.timeLabel.text = timeString(time: timeLeft)

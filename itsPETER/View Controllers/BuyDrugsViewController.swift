@@ -24,7 +24,12 @@ class BuyDrugsViewController: UIViewController {
         
         let name = drug.name
         if let playerDrug = DrugController.shared.player.stash.first(where: {$0.name == name }) {
-            amountEntryTextField.text = "\(playerDrug.amount)"
+            if playerDrug.amount > 0 {
+                amountEntryTextField.text = "\(playerDrug.amount)"
+            } else {
+                amountEntryTextField.text = ""
+                amountEntryTextField.placeholder = "Enter amount in grams"
+            }
         } else {
             amountEntryTextField.text = ""
         }

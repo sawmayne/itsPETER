@@ -6,7 +6,7 @@
 //  Copyright © 2018 SamWayne. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Drug {
     

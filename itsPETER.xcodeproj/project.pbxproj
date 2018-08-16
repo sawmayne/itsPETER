@@ -66,17 +66,12 @@
 		90D049B62124D5BF0087ACA1 /* itsPETER */ = {
 			isa = PBXGroup;
 			children = (
+				EF1BF1AC21260EFB003DCFBD /* View Controllers */,
 				EF1BF19A2124ECC3003DCFBD /* Model Controller */,
 				EF1BF1992124ECB3003DCFBD /* Model */,
-				90D049B72124D5BF0087ACA1 /* AppDelegate.swift */,
-				90D049B92124D5BF0087ACA1 /* ViewController.swift */,
-				90D049BB2124D5BF0087ACA1 /* Main.storyboard */,
-				90D049BE2124D5C70087ACA1 /* Assets.xcassets */,
-				90D049C02124D5C70087ACA1 /* LaunchScreen.storyboard */,
-				90D049C32124D5C70087ACA1 /* Info.plist */,
 				EF1BF1A12124EE99003DCFBD /* Helpers */,
-				EF1BF1A62125D8C1003DCFBD /* BuyDrugsViewController.swift */,
-				EF1BF1A82125D8D8003DCFBD /* StashViewController.swift */,
+				EF1BF1AD21260F18003DCFBD /* Resources */,
+				90D049BB2124D5BF0087ACA1 /* Main.storyboard */,
 			);
 			path = itsPETER;
 			sourceTree = "<group>";
@@ -104,6 +99,27 @@
 				EF1BF1A22124EEB7003DCFBD /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EF1BF1AC21260EFB003DCFBD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				90D049B92124D5BF0087ACA1 /* ViewController.swift */,
+				EF1BF1A82125D8D8003DCFBD /* StashViewController.swift */,
+				EF1BF1A62125D8C1003DCFBD /* BuyDrugsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EF1BF1AD21260F18003DCFBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90D049B72124D5BF0087ACA1 /* AppDelegate.swift */,
+				90D049BE2124D5C70087ACA1 /* Assets.xcassets */,
+				90D049C02124D5C70087ACA1 /* LaunchScreen.storyboard */,
+				90D049C32124D5C70087ACA1 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 999584GN38;
-				INFOPLIST_FILE = itsPETER/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/itsPETER/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 999584GN38;
-				INFOPLIST_FILE = itsPETER/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/itsPETER/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

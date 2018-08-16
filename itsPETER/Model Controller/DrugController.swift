@@ -56,7 +56,7 @@ class DrugController {
         }
     }
     
-    
+    // Win like a big dog
     func winGameAlert() {
         let alertController = UIAlertController(title: "About time", message: "You win. Now go get me another 5 grand.", preferredStyle: .alert)
         
@@ -70,8 +70,7 @@ class DrugController {
     }
 }
 
-
-
+// Helper to shuffle the drugs array in the table view
 extension Array {
     /// Returns an array containing this sequence shuffled
     var shuffled: Array {

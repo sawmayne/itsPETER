@@ -12,6 +12,10 @@
 		90D049BD2124D5BF0087ACA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D049BB2124D5BF0087ACA1 /* Main.storyboard */; };
 		90D049BF2124D5C70087ACA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D049BE2124D5C70087ACA1 /* Assets.xcassets */; };
 		90D049C22124D5C70087ACA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D049C02124D5C70087ACA1 /* LaunchScreen.storyboard */; };
+		EF1BF19C2124ECD4003DCFBD /* Drug.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BF19B2124ECD4003DCFBD /* Drug.swift */; };
+		EF1BF19E2124ED7C003DCFBD /* DrugController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BF19D2124ED7C003DCFBD /* DrugController.swift */; };
+		EF1BF1A32124EEB7003DCFBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BF1A22124EEB7003DCFBD /* Constants.swift */; };
+		EF1BF1A52125055C003DCFBD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BF1A42125055C003DCFBD /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		90D049BE2124D5C70087ACA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90D049C12124D5C70087ACA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90D049C32124D5C70087ACA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF1BF19B2124ECD4003DCFBD /* Drug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drug.swift; sourceTree = "<group>"; };
+		EF1BF19D2124ED7C003DCFBD /* DrugController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugController.swift; sourceTree = "<group>"; };
+		EF1BF1A22124EEB7003DCFBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EF1BF1A42125055C003DCFBD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,42 @@
 		90D049B62124D5BF0087ACA1 /* itsPETER */ = {
 			isa = PBXGroup;
 			children = (
+				EF1BF19A2124ECC3003DCFBD /* Model Controller */,
+				EF1BF1992124ECB3003DCFBD /* Model */,
 				90D049B72124D5BF0087ACA1 /* AppDelegate.swift */,
 				90D049B92124D5BF0087ACA1 /* ViewController.swift */,
 				90D049BB2124D5BF0087ACA1 /* Main.storyboard */,
 				90D049BE2124D5C70087ACA1 /* Assets.xcassets */,
 				90D049C02124D5C70087ACA1 /* LaunchScreen.storyboard */,
 				90D049C32124D5C70087ACA1 /* Info.plist */,
+				EF1BF1A12124EE99003DCFBD /* Helpers */,
 			);
 			path = itsPETER;
+			sourceTree = "<group>";
+		};
+		EF1BF1992124ECB3003DCFBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF1BF19B2124ECD4003DCFBD /* Drug.swift */,
+				EF1BF1A42125055C003DCFBD /* Player.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF1BF19A2124ECC3003DCFBD /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF1BF19D2124ED7C003DCFBD /* DrugController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		EF1BF1A12124EE99003DCFBD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EF1BF1A22124EEB7003DCFBD /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90D049BA2124D5BF0087ACA1 /* ViewController.swift in Sources */,
+				EF1BF1A32124EEB7003DCFBD /* Constants.swift in Sources */,
+				EF1BF19E2124ED7C003DCFBD /* DrugController.swift in Sources */,
+				EF1BF1A52125055C003DCFBD /* Player.swift in Sources */,
 				90D049B82124D5BF0087ACA1 /* AppDelegate.swift in Sources */,
+				EF1BF19C2124ECD4003DCFBD /* Drug.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96XK4QDZ27;
+				DEVELOPMENT_TEAM = 999584GN38;
 				INFOPLIST_FILE = itsPETER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96XK4QDZ27;
+				DEVELOPMENT_TEAM = 999584GN38;
 				INFOPLIST_FILE = itsPETER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

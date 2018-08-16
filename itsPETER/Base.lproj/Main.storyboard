@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stash View Controller-->
         <scene sceneID="RnA-aX-lcH">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="UWs-Yk-CiA" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="UWs-Yk-CiA" customClass="StashViewController" customModule="itsPETER" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IiY-W5-jdG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,12 +153,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1kF-tJ-T0D"/>
                     </view>
+                    <connections>
+                        <outlet property="acidLabel" destination="Qdo-9e-GCV" id="khD-u9-0a5"/>
+                        <outlet property="cokeLabel" destination="Zuo-e4-fGP" id="9bM-ml-MzX"/>
+                        <outlet property="heroinLabel" destination="pr9-Yg-Tvd" id="tN6-G1-cOf"/>
+                        <outlet property="pingasLabel" destination="QPR-eZ-giZ" id="oN2-Yk-p89"/>
+                        <outlet property="weedLabel" destination="Iml-Lp-z0V" id="tTW-Hk-urm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTE-sO-V5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1847" y="-532"/>
         </scene>
-        <!--Dope Wars-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="itsPETER" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,7 +221,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="XuL-3J-f9T" kind="show" id="awJ-L5-M0d"/>
+                                            <segue destination="XuL-3J-f9T" kind="show" identifier="buyDrugs" id="awJ-L5-M0d"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -231,6 +238,9 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="locationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xzn-0B-NPm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwG-Kn-vtK">
                                         <rect key="frame" x="0.0" y="40" width="109" height="30"/>
@@ -241,6 +251,9 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="locationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VGl-se-Tpr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Il-4X-Lht">
                                         <rect key="frame" x="0.0" y="80" width="109" height="30"/>
@@ -251,6 +264,9 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="locationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQT-O7-6B6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDm-Gs-I4o">
                                         <rect key="frame" x="0.0" y="120" width="109" height="30"/>
@@ -261,6 +277,9 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="locationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Cn-jl-8gd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -307,7 +326,7 @@
                                         <color key="textColor" red="0.15595533219999999" green="0.92779582739999999" blue="0.1114072769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-7I-W9m">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-7I-W9m">
                                         <rect key="frame" x="101.5" y="0.0" width="100.5" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.15595533219999999" green="0.92779582739999999" blue="0.1114072769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -364,20 +383,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="cashLabel" =destination="0fH-UP-IHC" id="eEs-SB-f0L"/>
+                        <outlet property="cashLabel" destination="0fH-UP-IHC" id="eEs-SB-f0L"/>
                         <outlet property="tableView" destination="chg-jr-zzQ" id="vGG-aZ-aJV"/>
                         <outlet property="timeLabel" destination="l6c-7I-W9m" id="cUh-13-YFs"/>
                     </connections>
-
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079.2" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Buy Drugs View Controller-->
         <scene sceneID="nF6-bk-MnF">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="XuL-3J-f9T" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="XuL-3J-f9T" customClass="BuyDrugsViewController" customModule="itsPETER" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zmD-r4-XG8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -397,6 +415,9 @@
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="sellButtonTapped:" destination="XuL-3J-f9T" eventType="touchUpInside" id="clh-DZ-DYL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXm-D8-hhE">
                                                 <rect key="frame" x="128.5" y="0.0" width="118" height="30"/>
@@ -407,6 +428,9 @@
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buyButtontapped:" destination="XuL-3J-f9T" eventType="touchUpInside" id="KT3-h3-0aK"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(price)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfx-o6-BhR">
                                                 <rect key="frame" x="256.5" y="0.0" width="118.5" height="30"/>
@@ -423,26 +447,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-N1-v0M">
                                         <rect key="frame" x="0.0" y="160" width="375" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQx-KB-iCt">
-                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.15595533219999999" green="0.92779582739999999" blue="0.1114072769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="111111" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8sq-7X-fgh">
-                                                <rect key="frame" x="128.5" y="0.0" width="118" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(total price)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcg-BV-Qav">
-                                                <rect key="frame" x="256.5" y="0.0" width="118.5" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.15595533219999999" green="0.92779582739999999" blue="0.1114072769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AsS-4I-ru8"/>
@@ -485,6 +495,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jJi-o7-7Ll"/>
                     </view>
+                    <connections>
+                        <outlet property="amountEntryTextField" destination="8sq-7X-fgh" id="22q-6a-REf"/>
+                        <outlet property="drugNameLabel" destination="Tck-f7-UFr" id="Gds-Hr-mBP"/>
+                        <outlet property="drugPriceLabel" destination="Sfx-o6-BhR" id="kVv-eW-z5c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3M-za-Bqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

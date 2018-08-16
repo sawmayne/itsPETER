@@ -16,28 +16,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var drugs: [Drug] = []
     var timer: Timer?
-    var timeLeft = 10
+    var timeLeft = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.drugs = DrugController.shared.fetchDrugsForLocation()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        startGameAlert()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        timer?.tolerance = 0.1
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        startGameAlert()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-        timer?.tolerance = 0.1
+        cashLabel.text = "$\(DrugController.shared.player.cash)"
     }
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
+        self.drugs = DrugController.shared.fetchDrugsForLocation()
         tableView.reloadData()
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.drugs = DrugController.shared.fetchDrugsForLocation()
         return drugs.count
     }
     
@@ -58,6 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let destinationVC = segue.destination as? BuyDrugsViewController else { return }
             
             destinationVC.drug = drugs[indexPath.row]
+            
         }
     }
     
@@ -74,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func startGameAlert() {
-        let alertController = UIAlertController(title: "Welcome to Salt Lake", message: "You've got 5 minutes to get me 20 grand.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Welcome to Salt Lake", message: "You've got 5 minutes to get me 5 grand.", preferredStyle: .alert)
         
         let startAction = UIAlertAction(title: "Start dealing", style: .default) { (_) in
 

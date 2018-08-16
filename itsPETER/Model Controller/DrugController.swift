@@ -6,7 +6,7 @@
 //  Copyright © 2018 SamWayne. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DrugController {
     
@@ -16,20 +16,24 @@ class DrugController {
     
     // Fetch drugs and prices for location (randomised)
     func fetchDrugsForLocation() -> [Drug] {
-        let drugs = Constants.allDrugs.shuffle()
-        return drugs
+        var drugs = Constants.allDrugs()
+        return drugs.shuffle()
     }
     
     // Buy a drug
-    func buy(drug: Drug, totalCost: Double) -> Bool {
+    func buy(drug: Drug, amount: Double, totalCost: Double) {
         if player.cash < totalCost {
             print("You're too pov.")
-            return false
-            // TODO: add alert controller to view controller
         } else {
-            player.stash.append(drug)
+            
+            let name = drug.name
+            if let playerDrug = DrugController.shared.player.stash.first(where: {$0.name == name }) {
+                playerDrug.amount += amount
+            } else {
+                print("Drug buy failed")
+            }
+            
             player.cash -= totalCost
-            return true
         }
     }
     
@@ -40,11 +44,29 @@ class DrugController {
         player.cash += totalCost
         
         // Remove the drug from their stash
-        player.stash = player.stash.filter {$0.name != drug.name}
-
-        if player.cash > 10000 {
-            // TODO: End the game with popup
+        let name = drug.name
+        if let playerDrug = DrugController.shared.player.stash.first(where: {$0.name == name }) {
+            playerDrug.amount = 0
+        } else {
+            print("Drug buy failed")
         }
+
+        if player.cash > 5000 {
+            winGameAlert()
+        }
+    }
+    
+    
+    func winGameAlert() {
+        let alertController = UIAlertController(title: "About time", message: "You win. Now go get me another 5 grand.", preferredStyle: .alert)
+        
+        let startAction = UIAlertAction(title: "Spend winnings on coke", style: .default) { (_) in
+            fatalError()
+        }
+        
+        alertController.addAction(startAction)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+        
     }
 }
 

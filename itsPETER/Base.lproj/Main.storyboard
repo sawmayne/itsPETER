@@ -334,6 +334,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cashLabel" destination="0fH-UP-IHC" id="eEs-SB-f0L"/>
+                        <outlet property="tableView" destination="chg-jr-zzQ" id="vGG-aZ-aJV"/>
+                        <outlet property="timeLabel" destination="l6c-7I-W9m" id="cUh-13-YFs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

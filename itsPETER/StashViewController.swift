@@ -10,26 +10,25 @@ import UIKit
 
 class StashViewController: UIViewController {
 
+    @IBOutlet weak var acidLabel: UILabel!
+    @IBOutlet weak var cokeLabel: UILabel!
+    @IBOutlet weak var heroinLabel: UILabel!
+    @IBOutlet weak var pingasLabel: UILabel!
+    @IBOutlet weak var weedLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateViews()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func updateViews() {
+        acidLabel.text = "\(DrugController.shared.player.stash[0].amount)"
+        cokeLabel.text = "\(DrugController.shared.player.stash[1].amount)"
+        heroinLabel.text = "\(DrugController.shared.player.stash[2].amount)"
+        pingasLabel.text = "\(DrugController.shared.player.stash[3].amount)"
+        weedLabel.text = "\(DrugController.shared.player.stash[4].amount)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
